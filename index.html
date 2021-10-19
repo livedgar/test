@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图书管理系统</title>
+
+<link href="css/stulogin.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="login" background="img/bg.jpg">
+
+<div class="login_m">
+	<div class="login_logo"><h1>登陆</h1></div>
+	<form method="post">
+	<div class="login_boder">
+		<div class="login_padding">
+			<h2>用户名</h2>
+			<label>
+				<input type="text" name="name" class="txt_input txt_input2" onFocus="this.value=''" value="用户名">
+			</label>
+			<h2>密码</h2>
+			<label>
+				<input type="text" name="pwd" class="txt_input txt_input2" onFocus="this.value=''" value="密码">
+			</label>
+			
+			<div class="rem_sub" align="center">
+				<label>
+					<input formaction="stulogin.php" type="submit" class="sub_rbutton" name="button" id="rbutton" value="学生登陆" style="opacity: 0.7;">
+				</label>
+				
+				<label>
+					<input formaction="tlogin.php" type="submit" class="sub_lbutton" name="button" id="lbutton" value="教师登录" style="opacity: 0.7;">
+				</label>
+			</div>
+		</div>
+	</div><!--login_boder end-->
+	</form>
+</div><!--login_m end-->
+
+<br />
+<br />
+</body>
+</html>

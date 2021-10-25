@@ -1,151 +1,217 @@
 <!DOCTYPE html>
-<html>
-	<head><meta charset="UTF-8"><meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><style>@import url(http://fonts.useso.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700);
-body {
-    background: #00E3E3;
-    font-size: 16px;
-}
-strong {
-    font-weight: 600;
-}
-h1 {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1.5px;
-    color: #333;
-    font-weight: 100;
-    font-size: 2.4em;
-}
-p{
-	font-style: italic;		
-}
-#content {
-    margin-top: 50px;
-    text-align: center;
-    /* Timeline */
-}
-.timeline {
-    border-left: 4px solid #4298c3;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    background: rgba(255, 255, 255, 0.03);
-    color: #333;
-    font-family: 'Source Sans Pro', sans-serif;
-    margin: 50px auto;
-    letter-spacing: 0.5px;
-    position: relative;
-    line-height: 1.4em;
-    font-size: 1.03em;
-    padding: 30px;
-    list-style: none;
-    text-align: left;
-    font-weight: 1;
-    max-width: 50%;
-}
-.timeline h1,
-.timeline h2,
-.timeline h3 {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1.5px;
-    font-weight: 100;
-    font-size: 1.4em;
-}
-.timeline .event {
-    border-bottom: 1px dashed #4298c3;
-    padding-bottom: 25px;
-    margin-bottom: 50px;
-    position: relative;
-}
-.timeline .event:last-of-type {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border: none;
-}
-.timeline .event:before,
-.timeline .event:after {
-    position: absolute;
-    display: block;
-    top: 0;
-}
-.timeline .event:before {
-    left: -217.5px;
-    color: #717171;
-    content: attr(data-date);
-    text-align: right;
-    font-weight: 400;
-    font-size: 0.9em;
-    min-width: 120px;
-}
-.timeline .event:after {
-    box-shadow: 0 0 0 4px #169eda;
-    left: -57.85px;
-    background: #91c740;
-    border-radius: 50%;
-    height: 11px;
-    width: 11px;
-    content: "";
-    top: 5px;
-}
-.div_right{
-	float: right;
-	color:#E800E8;
-		}</style>
-	<script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?8c68efa3648cdc01a3d8333e0becf3c7";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-	<script>
-    function time() {
-        var date = new Date();
-        var hour = date.getHours();
-		if(hour<'10')
-			hour='0'+hour;
-        var minutes = date.getMinutes();
-		if(minutes<'10')
-			minutes='0'+minutes;
-        var seconds = date.getSeconds();
-		if(seconds<10)
-			seconds='0'+seconds;
-        var str = hour + ":" + minutes + ":" + seconds;
-        var div1 = document.getElementById("div1");
-        div1.innerHTML = str;
-    }
-    setInterval(time,1000);
-    </script>
-	</head>
-	<body>
-		<div id="div1" class="div_right"></div>
-		<br>
-		<div id="content">
-	<h1><b><font color="FF0000">Daily Schedule</font></b></h1>
+<script src="pageview.php" defer="defer">
+</script>
+<!--[if lte IE 8]> <html class="oldie" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>TibetanQA</title>
+	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/all.css" />
+	<link rel="stylesheet" href="css/screen.css" />
+	<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style>
+		.merge_first{
+			white-space: normal;
+			border-right: 2px solid #8d8b8b;
+		}
+		.merge_td{
+			white-space: normal;
+			border-right: 2px solid #8d8b8b;
+			border-top: 2px solid #8d8b8b;
+		}
+		.merge_td_second{
+			/* border-left: 2px solid #0a0909; */
+			border-top: 2px solid #8d8b8b;
+		}
+		.merge_td_third{
+			border-top: 2px solid #8d8b8b;
+		}
+		.extra{
+			color:#A8A8A8;
+		}
+		/* .other_td_first{
+			border-left: 2px solid #0a0909;
+		} */
 
-    <ul class="timeline">
-		<li class="event" data-date="每日必完成">
-			<h3><b>Zero</b></h3>
-            <p>韧带拉升</p>
-			<p>英语听力</p>
-        </li>
-        <li class="event" data-date="08:00 - 09:00">
-            <h3><b>One</b></h3>
-            <p>起床，洗漱，吃早点</p>
-        </li>
-        <li class="event" data-date="09:00 - 11:00">
-            <h3><b>Two</b></h3>
-            <p>学习</p>
-        </li>
-        <li class="event" data-date="14:00 - 16:00">
-            <h3><b>Three</b></h3>
-            <p>学习</p>
-        </li>
-        <li class="event" data-date="19:00 - 22:00">
-            <h3><b>Four</b></h3>
-            <p>学习</p>
-		</li>
-    </ul>
-</div><script src="http://wow.techbrood.com/libs/prefixfree.min.js"></script><script src="http://wow.techbrood.com/libs/modernizr.js"></script><script src="http://wow.techbrood.com/libs/jquery/jquery-1.11.1.min.js"></script><script></script>
-	</body>
+
+		#pageStyle{  
+    display:inline-block;  
+    width:32px;  
+    height:32px;  
+    border:1px solid #CCC;  
+    line-height:32px;  
+    text-align:center;  
+    color:#999;  
+    margin-top:20px;  
+    text-decoration:none;  
+ 
+    }  
+ #pageStyle:hover{  
+     background-color:#CCC;  
+     }  
+ #pageStyle .active{  
+     background-color:#0CF;  
+     color:#ffffff;  
+     }        
+    .style1
+    {
+        font-size: 12pt;
+    }
+    </style>
+	<style type="text/css">
+		table{
+			text-align: center;
+		}
+		td{
+			color: black;
+		}
+	</style>
+	<style>
+        .button-k {
+            display: block;
+            background-color: rgba(219,87,5,1);
+            position: relative;
+            width: 200px;
+            text-align: center;
+            outline: none;
+            cursor: pointer;
+            margin: 0;
+            padding: 5px;
+            border: none;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            -webkit-box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 4px 6px rgba(0,0,0,.7);
+            -moz-box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 4px 6px rgba(0,0,0,.7);
+            box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 4px 6px rgba(0,0,0,.7);
+            -webkit-transition: all .1s ease;
+            -moz-transition: all .1s ease;
+            -ms-transition: all .1s ease;
+            -o-transition: all .1s ease;
+            transition: all .1s ease;
+            font-family: 'Yanone Kaffeesatz';
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            color: rgba(255,255,255,1);
+        }
+
+            .button-k:active {
+                -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+                -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+                box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+                position: relative;
+                top: 2px;
+            }
+    </style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class="wrapper-holder">
+			<header id="header">
+				<h1 class="logo" style="height: 50px;width:500px;float: right;padding: 50px 70px">TibetanQA</h1>
+				<img src="images/title.jpg" width="117" height="102" style="border-radius: 50%;padding: 10px">
+				
+				<h2 class="slogan">CMLI Research Center<br/>Minzu University of China</h2>
+				<!-- <h2 class="slogan">Minzu University of China</h2> -->
+			</header>
+		</div>
+		<div class="wrapper-holder grey">
+			<section id="main">
+			  <div class="box_timeline_holder">
+				  <div class="box_timeline">
+						<ul>
+							<li>
+								<!--div class="date">
+									<span>01</span>
+								</div-->
+								<h3 style="padding: 20px 5px 0 0">What is TibeTanQA?</h3>
+								<p>Tibetan Machine Reading Comprehension Dataset (TibetanQA) is a Tibetan reading comprehension datset, which contains 20,000 question answer pairs and 1,513 articles.</p>
+							<!-- </li> -->
+
+							<!-- <li> -->
+								<!--div class="date">
+									<span>02</span>
+								</div-->
+								<h3 style="padding: 0">TibetanQA</h3>
+								<p>Multi-domain resources: The articles are from the Tibetan Encyclopedia website and cover 12 topics, including nature, culture, education and so on.
+</p><p>High quality: A complete and strict workflow is adopted to passage collection, question construction and answer verification to ensure the high quality of the data.
+</p><p>Challenging questions: The questions are diverse and the forms are not restricted. Finally, we apply two classic English MRC models on the TibetanQA, and the results are much lower than human performance. This shows that more exploration is needed on Tibetan MRC tasks.</p>
+							<!-- </li> -->
+
+							<!-- <li> -->
+								<!--div class="date">
+									<span>03</span>
+								</div-->
+								<h3 style="padding: 0">Download</h3>
+								<p><a class="btn actionBtn" onClick="window.alert('Data is not available')">TibetanQA set</a></p>
+								<p><a class="btn actionBtn" href="https://aclanthology.org/2021.ccl-1.20/">TibetanQA paper(Yuan Sun et al.2021)</a></p>
+								<h3 style="padding: 0">Contact us</h3>
+								<p>Tel: 18811388681<br>Email: TibetanQA_Office@163.com</p>
+							</li>
+						</ul>
+					</div>
+				  <div class="box_timeline" style="width: 66%"><ul><li>
+					<div class="table_display">
+						<div style="padding: 0 20px 10px 0">
+							<h3 style="padding: 0 0 0 0px">Leaderboard</h3>
+						<div style="background: white;padding: 0 10px 0 10px">
+							
+				  <table>
+					  <tr> 
+						  <td width="20%">Rank</td>
+						  <td width="40%">Model</td>
+						  <td width="20%">EM</td>
+						  <td width="20%">F1</td>
+					  </tr>
+					  <tr>
+						  <td></td>
+						  <td>Human Performance</td>
+						  <td>86.831</td>
+						  <td>89.452</td>
+					</tr>
+					  <tr>
+						  <td> <p>1</p><span class="extra">Nov 12,2021</span></td>
+						  <td>Ti-Reader<p>Minzu University of China</p><p><a href="https://aclanthology.org/2021.ccl-1.21/" style="color: blue;">https://aclanthology.org/2021.ccl-1.21/</a></p></td>
+						  <td>67.9</td>
+						  <td>77.4</td>
+					</tr>
+						
+						
+				</table>
+						</div>
+						</div>
+						<div style="padding: 30px 20px 10px 0"><h3 style="padding: 0">Data Detail</h3></div>
+						<div>
+						<img src="images/type_answer.jpg" width="368px" height="292px" alt="答案类型">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="images/type_ques.jpg" width="320px" height="292px" alt="问句类型">
+						</div>
+						<div style="padding: 30px 20px 10px 0"><h3 style="padding: 0">Data Demo</h3></div>
+						<div style="padding: 0 0 10px 20px">
+							<button class="btn actionBtn" onClick="javascript:window.location.href='data_demo.html'" style="height: 40px">Data Demo</button>
+						</div>
+					  </div></li></ul></div>
+				</div>
+			</section>
+		</div>
+
+			
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/cells-by-row.js"></script>
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+</body>
 </html>
